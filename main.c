@@ -94,7 +94,7 @@ void led_off(int placement){
 };
 
 void led_on(int placement){
-	GPIO0->OUTCLR &= (1<<placement);
+	GPIO0->OUTCLR |= (1<<placement);
 };
 
 
@@ -103,10 +103,11 @@ int main(){
 	led_init();
 	btn_init();
 	int sleep = 0;
-	while(1){
-		for(int i=17; i<21;i++){
+	for(int i=17; i<21;i++){
 			led_off(i);
 		}
+	while(1){
+		
 
 		if (isBtnPressed(13))
 		{
@@ -114,16 +115,12 @@ int main(){
 		}
 	if (isBtnPressed(14))
 		{
-			led_on(18);
+			led_off(18);
+			led_off(17);
+			led_off(19);
+			led_off(20);
 		}
-		if (isBtnPressed(15))
-		{
-			led_on(19);
-		}
-		if (isBtnPressed(16))
-		{
-			led_on(20);
-		}
+		
 
 		
 		
