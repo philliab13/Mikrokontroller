@@ -71,11 +71,10 @@ typedef struct {
 
 
 void led_init(){
-	  GPIO0->PIN_CNF[17]=1;
+	  GPIO0->PIN_CNF[17] = 1;
 	  GPIO0->PIN_CNF[18] = 1;
-	  GPIO0->PIN_CNF[19]=1;
-	  GPIO0->PIN_CNF[20]=1;
-
+	  GPIO0->PIN_CNF[19] = 1;
+	  GPIO0->PIN_CNF[20] = 1;
 };
 
 void btn_init(){
